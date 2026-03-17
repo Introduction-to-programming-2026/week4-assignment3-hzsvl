@@ -1,19 +1,20 @@
-/*
-WEEK 1 — TASK 3 (Linear Search - Integers)
+#include <cs50.h>
+#include <stdio.h>
 
-Goal:
-Practice arrays and linear search.
+int main(void)
+{
+    int numbers[5] = {1, 2, 3, 4, 5};
 
-Task:
-1. Create an array of integers.
-2. Ask the user for a number.
-3. Search the array manually (no library search).
-4. If found print:
-Found
-   Otherwise print:
-Not found
+    int target = get_int("Number: ");
 
-Rules:
-- You must use a loop.
-- Do NOT use any built-in search function.
-*/
+    for (int i = 0; i < 5; i++)
+    {
+        if (numbers[i] == target)
+        {
+            printf("Found\n");
+            return 0;
+        }
+    }
+
+    printf("Not found\n");
+}
