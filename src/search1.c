@@ -1,20 +1,21 @@
-/*
-WEEK 1 — TASK 4 (Linear Search - Strings)
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
 
-Goal:
-Practice string comparison.
+int main(void)
+{
+    string names[3] = {"Ali", "Ayse", "Mehmet"};
 
-Task:
-1. Create an array of strings (names).
-2. Ask the user for a name.
-3. Search the array.
-4. Use strcmp() to compare strings.
-5. Print:
-Found
-or
-Not found
+    string target = get_string("Name: ");
 
-Rules:
-- You must use strcmp().
-- Do NOT use == for string comparison.
-*/
+    for (int i = 0; i < 3; i++)
+    {
+        if (strcmp(names[i], target) == 0)
+        {
+            printf("Found\n");
+            return 0;
+        }
+    }
+
+    printf("Not found\n");
+}
