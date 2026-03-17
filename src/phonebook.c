@@ -1,22 +1,37 @@
-/*
-WEEK 1 — TASK 5 (Structs - Phonebook)
+#include <cs50.h>
+#include <stdio.h>
+#include <string.h>
 
-Goal:
-Practice structs and arrays.
+typedef struct
+{
+    string name;
+    string phone;
+}
+person;
 
-Task:
-1. Create a struct Person with:
-   - string name
-   - string phone
-2. Create an array of persons (size 5 or 10).
-3. Ask the user for a name.
-4. If found, print the phone number.
-5. If not found, print "Not found".
+int main(void)
+{
+    person people[3];
 
-Bonus (optional):
-Allow the user to add a new contact.
+    people[0].name = "Ali";
+    people[0].phone = "111";
 
-Rules:
-- You must use struct.
-- Use strcmp() to compare names.
-*/
+    people[1].name = "Ayse";
+    people[1].phone = "222";
+
+    people[2].name = "Mehmet";
+    people[2].phone = "333";
+
+    string target = get_string("Name: ");
+
+    for (int i = 0; i < 3; i++)
+    {
+        if (strcmp(people[i].name, target) == 0)
+        {
+            printf("%s\n", people[i].phone);
+            return 0;
+        }
+    }
+
+    printf("Not found\n");
+}
