@@ -1,25 +1,24 @@
-/*
-WEEK 1 — TASK 1 (Iteration)
+#include <cs50.h>
+#include <stdio.h>
 
-Goal:
-Practice loops and input validation.
+int main(void)
+{
+    int n;
 
-Task:
-1. Ask the user for a positive integer n.
-2. If n < 1, ask again until valid.
-3. Print a half-pyramid using # symbols.
+    // get positive number
+    do
+    {
+        n = get_int("Height: ");
+    }
+    while (n < 1);
 
-Example:
-Input: 4
-
-Output:
-#
-##
-###
-####
-
-Rules:
-- You must use loops (for or while).
-- No recursion allowed.
-- Output must match exactly.
-*/
+    // print pyramid
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 0; j < i; j++)
+        {
+            printf("#");
+        }
+        printf("\n");
+    }
+}
